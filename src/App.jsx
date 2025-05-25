@@ -4,6 +4,7 @@ import PrivateRoute from './routes/PrivateRoute';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Availability from './pages/Availability';
+import React from 'react';
 
 function App() {
   return (
