@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './routes/PrivateRoute';
 import Login from './pages/Login';
@@ -11,6 +11,7 @@ function App() {
     <Router>
       <AuthProvider>
         <Routes>
+          <Route path="/" element={<Navigate to="/login" />} /> {/* 👈 Fix here */}
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path="/availability" element={<PrivateRoute><Availability /></PrivateRoute>} />
@@ -21,4 +22,3 @@ function App() {
 }
 
 export default App;
-
