@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './routes/PrivateRoute';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Availability from './pages/Availability';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="/availability" element={<PrivateRoute><Availability /></PrivateRoute>} />
         </Routes>
       </AuthProvider>
     </Router>
